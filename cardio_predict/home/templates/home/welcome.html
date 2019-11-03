@@ -1,0 +1,30 @@
+{% extends "home/base.html" %}
+{% load staticfiles%}
+{% block content %}
+
+<h1 class="font-weight-bold text-md-center m-5">
+    Cardio Vascular Disease Prediction
+</h1>
+
+<div class="card" >
+    <a href="{% url 'adddata' %}" class="btn btn-primary text-bold"style="height: 20vh;font-size:55px;">Predict Now</a>
+</div>
+<h2>pre-processing data</h2>
+    <div class="card 1">
+        <div class="card_image"> 
+            <img src="{% static 'home/img/two.png' %}" /> 
+        </div>
+        <div class="card_title title-white">
+          <p>Orginal Dataset</p>
+        </div>
+      </div>
+      <div class="card 1">
+            <div class="card_image"> 
+                <img src="{% static 'home/img/three.png' %}" /> 
+            </div>
+            <div class="card_title title-white">
+              <p>Final Processed Dataset</p>
+            </div>
+          </div>
+
+{% endblock content %}

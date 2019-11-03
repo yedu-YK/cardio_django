@@ -1,0 +1,51 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<div>
+    
+</div>
+<div class="register-photo">
+    <div class="form-container">
+        <div class="image-holder"></div>
+        <form method="post">
+            <h2 class="text-center">PREDICTIONS</h2>
+               {% if predicted == 1 %}
+    <h3>It's predicted that <strong>{{user.user_name}}</strong> has a high chance to get Cardio Vascular Disease </h3>
+    <a href="https://medlineplus.gov/howtopreventheartdisease.html">Follow this link for ways to avoid CVD</a>
+      {%else%}
+    <h3>its predicted that <strong>{{user.user_name}}</strong> has a low chance to get Cardio Vascular Disease  </h3>
+
+    {% endif %}
+    {% if user.bmi == 1 %}
+        <h5>Your Body Mass Index : <strong>Normal</strong></h5>
+    {% elif user.bmi == 2 %}
+    <h5>Your Body Mass Index : <strong>Under Weight</strong></h5>
+    {% elif user.bmi == 3 %}
+    <h5>Your Body Mass Index : <strong>Over Weight</strong></h5>
+    {% elif user.bmi == 4 %}
+    <h5>Your Body Mass Index : <strong>Obese</strong></h5>
+    {% endif %}
+
+    {% if user.bpc == 1 %}
+    <h5>Your Blood Pressure Category : <strong>Normal</h5>
+    {% elif user.bpc == 2 %}
+    <h5>Your Blood Pressure Category : <strong>Elevated</strong></h5>
+    {% elif user.bpc == 3 %}
+    <h5>Your Blood Pressure Category : <strong>Hyper Tension Stage 1</strong></h5>
+    {% elif user.bpc == 4 %}
+    <h5>Your Blood Pressure Category : <strong>Hyper Tension Stage 2</strong></h5>
+    {% elif user.bpc == 5 %}
+    <h5>Your Blood Pressure Category : <strong>Hyper Tensive Crisis</strong> </h5>
+    {% endif %}
+    
+    
+    {% if user.bmi and user.bpc == 1 %}
+        <h5>Your are a healthy Person</h5>
+    {% else %}
+    <h5><strong>Please visit a hosiptal</strong></h5>        
+    {% endif %}
+        
+        </div>
+        
+</div>
+{% endblock content %}
